@@ -1,0 +1,6 @@
+cohere
+numpy
+annoy
+fastapi
+pydantic
+python-dotenv

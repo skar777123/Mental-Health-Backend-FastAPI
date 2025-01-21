@@ -4,3 +4,4 @@ annoy
 fastapi
 pydantic
 python-dotenv
+uvicorn

@@ -85,7 +85,7 @@ def ask_llm(question, num_generations=1):
     prediction = co.generate(
         prompt=prompt,
         max_tokens=70,
-        model="command-light",
+        model="command-nightly",
         temperature=0.5,
         num_generations=num_generations
     )

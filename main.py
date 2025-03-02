@@ -11,7 +11,7 @@ warnings.filterwarnings('ignore')
 app = FastAPI()
 load_dotenv()
 
-# COHERE_API_KEY = "HUyR9cZj9qyXfTUoNglmex3Zow94YD7ac9n3ovxy"
+# COHERE_API_KEY = "etftsr4I4QtfbZzTPMuE4AhLMDgiI0wLRdmjdWVu"
 COHERE_API_KEY = os.environ.get("COHERE_API_KEY")
 co = cohere.Client(COHERE_API_KEY)
 
@@ -62,6 +62,7 @@ def ask_llm(question, num_generations=1):
 
     Extract the answer of the question from the text provided.
 
+    Make sure you only give required answer only
     If the text doesn't contain the answer, don't reply that the answer is not available.
     If the answer is available for the text, modify it and make it humanized and creative.
     And if the text user provided does not contain a direct answer to the question don't mention it and give an appropriate answer.
@@ -70,7 +71,7 @@ def ask_llm(question, num_generations=1):
     prediction = co.generate(
         prompt=prompt,
         max_tokens=70,
-        model="command-nightly",
+        model="command-light",
         temperature=0.5,
         num_generations=num_generations
     )

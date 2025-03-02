@@ -14,6 +14,9 @@ origins = [
     "http://localhost:3000",
 ]
 
+app = FastAPI()
+load_dotenv()
+
 app.add_middleware(
     CORSMiddleware,
     allow_origins=origins,
@@ -21,9 +24,6 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
-
-app = FastAPI()
-load_dotenv()
 
 # COHERE_API_KEY = "etftsr4I4QtfbZzTPMuE4AhLMDgiI0wLRdmjdWVu"
 COHERE_API_KEY = os.environ.get("COHERE_API_KEY")
